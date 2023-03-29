@@ -1,0 +1,40 @@
+import CoolProp.CoolProp as CP
+from CoolProp.Plots import PropertyPlot
+
+plot = PropertyPlot('REFPROP::CO2[0.2]&ACETONE[0.8], 'TS', unit_system='EUR', tp_limits='ORC')
+plot.calc_isolines(CP.iQ, num=11)
+plot.calc_isolines(CP.iP, iso_range=[1,50], num=10, rounding=True)
+plot.title(r'$T-s$ Graph for Carbon Dioxide-Acetone $(20\%)$')
+plot.xlabel(r'$s$ [kJ/kg K]')
+plot.ylabel(r'$T$ [C]')
+plot.grid()
+plot.draw()
+
+plot = PropertyPlot('REFPROP::CO2[0.15]&ACETONE[0.85]', 'TS', unit_system='EUR', tp_limits='ORC')
+plot.calc_isolines(CP.iQ, num=11)
+plot.calc_isolines(CP.iP, iso_range=[1,50], num=10, rounding=True)
+plot.title(r'$T-s$ Graph for Carbon Dioxide-Acetone $(15\%)$')
+plot.xlabel(r'$s$ [kJ/kg K]')
+plot.ylabel(r'$T$ [C]')
+plot.grid()
+plot.draw()
+
+plot = PropertyPlot('REFPROP::CO2[0.1]&ACETONE[0.9]', 'TS', unit_system='EUR', tp_limits='ORC')
+plot.calc_isolines(CP.iQ, num=11)
+plot.calc_isolines(CP.iP, iso_range=[1,50], num=10, rounding=True)
+plot.title(r'$T-s$ Graph for Carbon Dioxide-Acetone $(10\%)$')
+plot.xlabel(r'$s$ [kJ/kg K]')
+plot.ylabel(r'$T$ [C]')
+plot.grid()
+plot.draw()
+
+plot = PropertyPlot('REFPROP::CO2[0.05]&ACETONE[0.95]', 'TS', unit_system='EUR', tp_limits='ORC')
+plot.calc_isolines(CP.iQ, num=11)
+plot.calc_isolines(CP.iP, iso_range=[1,50], num=10, rounding=True)
+plot.title(r'$T-s$ Graph for Carbon Dioxide-Acetone $(5\%)$')
+plot.xlabel(r'$s$ [kJ/kg K]')
+plot.ylabel(r'$T$ [C]')
+plot.grid()
+plot.draw()
+
+plot.show()
