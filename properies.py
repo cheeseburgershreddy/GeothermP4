@@ -25,4 +25,12 @@ plot.ylabel(r'$T$ [$^\circ$C]')
 plot.grid()
 plot.draw()
 
+plot = PropertyPlot('REFPROP::AMMONIA[0.8]&WATER[0.2]', 'TS', unit_system='EUR', tp_limits='ACHP')
+plot.calc_isolines(CP.iQ, num=5)
+plot.title(r'$T-s$ Graph for Ammonia in Water $(80\%)$')
+plot.xlabel(r'$s$ [kJ/kg$^\circ$K]')
+plot.ylabel(r'$T$ [$^\circ$C]')
+plot.grid()
+plot.draw()
+
 plot.show()
